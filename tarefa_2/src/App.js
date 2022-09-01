@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>LISTA DE TAREFAAS</h1>
+      <h1>LISTA DE TAREFAS</h1>
       <form className="row">
         <div className="col-md-12 mb-3">
           <label className="form-label">Tarefa</label>
