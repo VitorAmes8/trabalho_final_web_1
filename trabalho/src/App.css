@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+#abaixo {
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+  
+}
+
+#normal {
+  color: rgba(15, 230, 33, 0.753);
+  font-weight: bold;
+  
+}
+
+footer{
+  font-size: 20px;
+  height: auto;
+  background-color: black;
+  color:white;
+  position:fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+
+}
