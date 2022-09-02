@@ -51,6 +51,11 @@
   
 }
 
+
+#nulo {
+  color: rgba(0, 0, 0, 0.753);
+  font-weight: bold;
+}
 footer{
   font-size: 20px;
   height: auto;

@@ -145,7 +145,8 @@ function App() {
                 </tr>
                 
               )
-            }else {return (
+            } else if (n.media >= 7)
+             {return (
               <tr key={index} id="normal">
                 <td>{n.nome}</td>
                 <td>{n.nota1}</td>
@@ -162,6 +163,21 @@ function App() {
               
             )
 
+            } else {return (
+              <tr key={index} id="nulo">
+                <td>{n.nome}</td>
+                <td>{n.nota1}</td>
+                <td>{n.nota2}</td>
+                <td>{n.nota3}</td>
+                <td>{n.media}</td>
+                <td>
+                  <button className="btn btn-primary" onClick={() => editar(n.id)}>EDITAR</button>
+                </td>
+                <td>
+                  <button className="btn btn-danger" onClick={() => excluir(n.id)}>EXCLUIR</button>
+                </td>
+              </tr>
+            )
             }})
           }
         </tbody>

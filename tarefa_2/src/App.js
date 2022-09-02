@@ -57,6 +57,7 @@ function App() {
     <div className="container">
       <h1>LISTA DE TAREFAS</h1>
       <form className="row">
+
         <div className="col-md-12 mb-3">
           <label className="form-label">Tarefa</label>
           <input type="text" className="form-control" value={nome} onChange={(event) => setNome(event.target.value)} />
@@ -67,15 +68,11 @@ function App() {
           <input type="text" className="form-control" value={nota1} onChange={(event) => setNota1(event.target.value)} />
         </div>
 
-
-    
-
         <div className='col-md-12' id="cadastrar">
         <button type="button" className="btn btn-primary " onClick={adicionar}>Cadastrar</button>
         </div>
         
       </form>
-
 
       <table className="table"  >
         <thead>
@@ -84,42 +81,31 @@ function App() {
             <th className="editar3" ></th>
             <th>Tarefa</th>
             <th className="teste" >Descrição</th>
-  
-            
             <th className="editar2" ></th>
             <th className="editar2" ></th>
           </tr>
         </thead>
         <tbody>
-
           {
             lista.map((n, index) => {      return (
 
               <tr key={index} id="normal">
                 <td className="editar3" >
+
                 <input  type="checkbox" class="maior"/>
                 </td>
+
                 <td>{n.nome}</td>
                 <td>{n.nota1}</td>
-
-
-                
 
                 <td>
                   <button className="btn btn-primary" id="editar" onClick={() => editar(n.id)}>EDITAR</button>
                 </td>
-
-
-
                 <td>
                   <button className="btn btn-danger" id="excluir" onClick={() => excluir(n.id)}>EXCLUIR</button>
                 </td>
-
-
               </tr>
-              
             )
-
             })
           }
         </tbody>
