@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
+
 function App() {
 
   const [id, setId] = useState();
@@ -9,6 +10,8 @@ function App() {
   const [nota2, setNota2] = useState('');
   const [nota3, setNota3] = useState('');
   const [lista, setLista] = useState([]);
+
+
 
 
   function adicionar() {
@@ -37,15 +40,13 @@ function App() {
       };
   
       nota.media = ((nota.nota1 + nota.nota2 + nota.nota3) / 3).toFixed(2);
-  
+
       lista.push(nota);
       setLista([...lista]);
 
 
-
+      
     }
-
-    
 
     setId('');
     setNome('');
@@ -72,14 +73,12 @@ function App() {
   }
 
 
-
-
-
-
   return (
     <div className="container">
       <h1>CONTROLE DE NOTAS</h1>
       <form className="row">
+
+        
         <div className="col-md-12 mb-3">
           <label className="form-label">Nome</label>
           <input type="text" className="form-control" value={nome} onChange={(event) => setNome(event.target.value)} />

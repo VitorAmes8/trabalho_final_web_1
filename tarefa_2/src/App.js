@@ -4,8 +4,8 @@ import './App.css';
 function App() {
 
   const [id, setId] = useState();
-  const [nome, setNome] = useState('');
-  const [nota1, setNota1] = useState('');
+  const [tarefa, setTarefa] = useState('');
+  const [descricao, setDescricao] = useState('');
   const [lista, setLista] = useState([]);
 
 
@@ -13,35 +13,35 @@ function App() {
 
     if (id) {
       const index = lista.findIndex(n => n.id === id);
-      lista[index].nome = nome;
-      lista[index].nota1 = nota1;
+      lista[index].tarefa = tarefa;
+      lista[index].descricao = descricao;
 
       setLista([...lista]);
 
     } else {
-      let nota = {
+      let descricoes = {
         id: Math.random().toString(36),
-        nome: nome,
-        nota1: nota1,
+        tarefa: tarefa,
+        descricao: descricao,
 
       };
   
-      lista.push(nota);
+      lista.push(descricoes);
       setLista([...lista]);
     }
 
     setId('');
-    setNome('');
-    setNota1('');
+    setTarefa('');
+    setDescricao('');
 
   }
 
   function editar(id) {
 
-    const nota = lista.find(n => n.id === id);
-    setId(nota.id);
-    setNome(nota.nome);
-    setNota1(nota.nota1);
+    const descricoes = lista.find(n => n.id === id);
+    setId(descricoes.id);
+    setTarefa(descricoes.tarefa);
+    setDescricao(descricoes.descricao);
 
   }
 
@@ -60,12 +60,12 @@ function App() {
 
         <div className="col-md-12 mb-3">
           <label className="form-label">Tarefa</label>
-          <input type="text" className="form-control" value={nome} onChange={(event) => setNome(event.target.value)} />
+          <input type="text" className="form-control" value={tarefa} onChange={(event) => setTarefa(event.target.value)} />
         </div>
 
         <div className="col-md-12 mb-3">
           <label className="form-label">Descrição</label>
-          <input type="text" className="form-control" value={nota1} onChange={(event) => setNota1(event.target.value)} />
+          <input type="text" className="form-control" value={descricao} onChange={(event) => setDescricao(event.target.value)} />
         </div>
 
         <div className='col-md-12' id="cadastrar">
@@ -77,12 +77,11 @@ function App() {
       <table className="table"  >
         <thead>
           <tr>
-            
-            <th className="editar3" ></th>
+            <th className="editarCheckbox" ></th>
             <th>Tarefa</th>
             <th className="teste" >Descrição</th>
-            <th className="editar2" ></th>
-            <th className="editar2" ></th>
+            <th className="editarEditarExcluir" ></th>
+            <th className="editarEditarExcluir" ></th>
           </tr>
         </thead>
         <tbody>
@@ -90,13 +89,12 @@ function App() {
             lista.map((n, index) => {      return (
 
               <tr key={index} id="normal">
-                <td className="editar3" >
-
+                <td className="editarCheckbox" >
                 <input  type="checkbox" class="maior"/>
                 </td>
-
-                <td>{n.nome}</td>
-                <td>{n.nota1}</td>
+                
+                <td>{n.tarefa}</td>
+                <td>{n.descricao}</td>
 
                 <td>
                   <button className="btn btn-primary" id="editar" onClick={() => editar(n.id)}>EDITAR</button>
