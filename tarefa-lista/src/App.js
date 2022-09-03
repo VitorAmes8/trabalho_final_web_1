@@ -79,7 +79,7 @@ function App() {
           <tr>
             <th className="editarCheckbox" ></th>
             <th>Tarefa</th>
-            <th className="teste" >Descrição</th>
+            <th>Descrição</th>
             <th className="editarEditarExcluir" ></th>
             <th className="editarEditarExcluir" ></th>
           </tr>
